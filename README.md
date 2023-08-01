@@ -1,7 +1,7 @@
 <p align="center" width="100%">
 </p>
 
-# K(G)OAT
+## K(G)OAT
 IA3방식으로 KoAlpaca를 fine tuning한 한국어 LLM모델
 
 요즘 LLM은 대부분 LoRA방식으로 훈련이 진행되고 있으며, 최근은 양자화 방식을 도입한 QLORA방식으로 많이 훈련되고 있습니다.
@@ -16,7 +16,7 @@ KOAT base모델인 KoAlpaca 또한, QLORA방식으로 메모리를 효율적으�
   - 수정사항은 이슈에 남겨주시면 수정하도록 하겠습니다.
 
 ---
-# K(G)OAT의 훈련 방식
+## K(G)OAT의 훈련 방식
 
 - baseline은 Beomi님의 KoAlpaca코드를 참조하였습니다.😃
 
@@ -48,7 +48,7 @@ koalpaca-polyglot | 800000 | 158 min
 - K(G)OAT는 A5000 2장으로 훈련되었으며, 한동대학교 [Xiaopeng Yang](https://www.researchgate.net/profile/Xiaopeng-Yang-2) 교수님의 AIMV 연구실에서 훈련되었습니다.
 
 ---
-# Dataset
+## Dataset
 
 - Dataset은 기본적으로 KoAlpaca와 성능 비교를 위해 Beomi님의 KoAlpacav1.1 데이터셋을 활용하였습니다.
   
