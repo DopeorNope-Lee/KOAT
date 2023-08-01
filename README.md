@@ -5,12 +5,11 @@ IA3방식으로 KoAlpaca를 fine tuning한 한국어 LLM모델
 
 KOAT base모델인 KoAlpaca 또한, QLORA방식으로 메모리를 효율적으로 활용하는 방법을 소개하고 있습니다.
 
-- 자세한 내용은 Beomi 님의 https://github.com/Beomi/KoAlpaca 깃허브를 참조바랍니다.
+  - 자세한 내용은 Beomi 님의 https://github.com/Beomi/KoAlpaca 깃허브를 참조바랍니다.
 
 저희 연구는 정철현 박사님의 주도하에 연구를 진행되었으며 빠른 훈련방식과 더 효율적인 방법론으로 소개된 IA3(T-Few) 방식으로 fine-tuning진행하여,
 더 적은 파라미터로 더 효율적인 훈련방식을 도입하였습니다.
-
-    - PEFT에서는 현재 IA3방식을 implement할 수 있으나, 주의할점은 Casual LM task에서는 라이브러리 코드를 수정해야 합니다.
+  - PEFT에서는 현재 IA3방식을 implement할 수 있으나, 주의할점은 Casual LM task에서는 라이브러리 코드를 수정해야 합니다.
 ---
 # K(G)OAT의 훈련 방식
 
