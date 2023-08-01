@@ -43,7 +43,7 @@ KOAT base모델인 KoAlpaca 또한, QLORA방식으로 메모리를 효율적으�
   
 - 하지만 프롬프트 구성에 대한 수정사항은 다음과 같습니다
 
-'''python
+```python
 # 기존의 코드
 data = data.map(
     lambda x: {'text': f"### 질문: {x['instruction']}\n\n### 답변: {x['output']}<|endoftext|>" }
@@ -53,4 +53,4 @@ data = data.map(
 data = data.map(
     lambda x: {'text': f"{x['instruction']}\n\n정답: {x['output']}<|endoftext|>"}
 )
-'''
+```
