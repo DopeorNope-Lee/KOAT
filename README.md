@@ -33,6 +33,17 @@ KOAT base모델인 KoAlpaca 또한, QLORA방식으로 메모리를 효율적으�
   - LoRA와의 차이점은, LoRA는 hidden state에 새로운 값을 더해주는 기법이지만, IA3의는 Attention에 Key, Value 값을 rescale해주는 벡터와 position-wise feed-forward network의 output을 rescale 하는 벡터를 추가해 훈련시키는 방식입니다.
     
   - IA3방식은 LoRA보다 적은 파라미터로 더 좋은 성능을 낸다는 방법론으로 소개되었으며 저희는 K(G)OAT를 활용하여 훈련을 진행하였습니다.
+
+- K(G)OAT는 4epoch, maxstep 32,000 step으로 훈련이 되었으며, 총 소요된 시간은 16시간 소요되었습니다.
+
+- 같은 방식으로 비트단위로 훈련시키지 않은 LORA방식을 적용한 KoAlpaca는 xxx 시간이 소요되었습니다.
+
+- 훈련한 파라키트 수는 다음과 같습니다.
+
+모델명 | 파라미터수 | 훈련 소요시간
+-- | -- | --
+koalpaca-polyglot | 800000 | 158m
+**K(G)OAT-polyglot** | **3000** | **158 min**
     
 - K(G)OAT는 A5000 2장으로 훈련되었으며, 한동대학교 [Xiaopeng Yang](https://www.researchgate.net/profile/Xiaopeng-Yang-2) 교수님의 AIMV 연구실에서 훈련되었습니다.
 
