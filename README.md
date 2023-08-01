@@ -1,3 +1,6 @@
+<p align="center" width="100%">
+</p>
+
 # K(G)OAT
 IA3방식으로 KoAlpaca를 fine tuning한 한국어 LLM모델
 
@@ -18,7 +21,7 @@ KOAT base모델인 KoAlpaca 또한, QLORA방식으로 메모리를 효율적으�
 - baseline은 Beomi님의 KoAlpaca코드를 참조하였습니다.😃
 
 - 양자화 방식은 사용되지 않았습니다.
-  - (Few shot learning 평가시, 모델을 비트 단위로 불러오게 되면, Fewshot러닝 평가가 되지 않는 이슈가 있습니다.)
+        > Few shot learning 평가시, 모델을 비트 단위로 불러오게 되면, Fewshot러닝 평가가 되지 않는 이슈가 있습니다.
 
 - KoAlpaca 5.8b가 베이스 모델이며, Tokenizer는 Polyglot5.8b의 Tokenizer를 사용하였습니다.
   
