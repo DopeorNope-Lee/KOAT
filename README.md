@@ -37,4 +37,20 @@ KOAT base모델인 KoAlpaca 또한, QLORA방식으로 메모리를 효율적으�
 - K(G)OAT는 A5000 2장으로 훈련되었으며, 한동대학교 [Xiaopeng Yang](https://www.researchgate.net/profile/Xiaopeng-Yang-2) 교수님의 AIMV 연구실에서 훈련되었습니다.
 
 ---
+# Dataset
 
+- Dataset은 기본적으로 KoAlpaca와 성능 비교를 위해 Beomi님의 KoAlpacav1.1 데이터셋을 활용하였습니다.
+  
+- 하지만 프롬프트 구성에 대한 수정사항은 다음과 같습니다
+
+'''python
+# 기존의 코드
+data = data.map(
+    lambda x: {'text': f"### 질문: {x['instruction']}\n\n### 답변: {x['output']}<|endoftext|>" }
+)
+
+# 수정된 프롬프트 코드
+data = data.map(
+    lambda x: {'text': f"{x['instruction']}\n\n정답: {x['output']}<|endoftext|>"}
+)
+'''
