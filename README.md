@@ -42,8 +42,8 @@
 
 모델명 | 파라미터수 | 훈련 소요시간
 -- | -- | --
-koalpaca-polyglot | 800000 | 158 min
-**K(G)OAT-polyglot** | **3000** | **158 min**
+koalpaca-polyglot | 3670016 | 158 min
+**K(G)OAT-polyglot** | **802816** | **158 min**
     
 - K(G)OAT는 A5000 2장으로 훈련되었으며, 한동대학교 [Xiaopeng Yang](https://www.researchgate.net/profile/Xiaopeng-Yang-2) 교수님의 AIMV 연구실에서 훈련되었습니다.
 
