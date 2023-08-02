@@ -1,7 +1,7 @@
 <p align="center" width="100%">
 </p>
 
-# K(G)OAT
+# K(G)OAT🐐
 - IA3방식으로 KoAlpaca를 fine tuning한 한국어 LLM모델
 
 - 요즘 LLM은 대부분 LoRA방식으로 훈련이 진행되고 있으며, 최근은 양자화 방식을 도입한 QLORA방식으로 많이 훈련되고 있습니다.
