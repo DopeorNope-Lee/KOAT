@@ -88,9 +88,10 @@ data = data.map(
 # Fewshot Learning 평가
 
 - Fewshot Learning 평가
-
+프롬프트별 정확도는 다음과 같습니다.
 모델명 | 프롬프트1 | 프롬프트2
 -- | -- | --
-koalpaca-polyglot | 800000 | 158 min
+polyglot-5.8b| 800000 | 158 min
+koalpaca-polyglot-5.8b | 800000 | 158 min
 **K(G)OAT-polyglot** | **3000** | **158 min**
     
