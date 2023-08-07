@@ -107,12 +107,12 @@ def build_prompt_text(sent):
 -- | -- | --
 polyglot-5.8b| 0.556 | 0.68
 koalpaca-polyglot-5.8b | 0.664 | 0.748
-**K(G)OAT-polyglot** | **0.658** | **0.784**
+**K(G)OAT-polyglot** | **0.712** | **0.81**
 
 
 - polyglot-5.8b와 koalpaca는 huggingface에 로딩되어있는 모델 불러와 inference를 진행시킨 결과 값입니다.
 
-- K(G)OAT는 더적은 파라미터를 사용하여 훈련하였지만, 프롬프트1 유형에서도 Koalaca와 근사한 성능을 보여주었고, 프롬프트2 유형에서는 3.6% 가량 성능된 정확도를 보여주었습니다.
+- K(G)OAT는 더적은 파라미터를 사용하여 훈련하였지만, 프롬프트1 유형과 프롬프트2 유형에서 매우 향상된 성능을 보여주었습니다.
 
 
 
