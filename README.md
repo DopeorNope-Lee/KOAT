@@ -43,14 +43,15 @@
 
 - 훈련한 방식에 따른 파라미터 수는 다음과 같습니다.
 
+
 훈련방식 | 파라미터수 | 훈련 소요시간
 -- | -- | --
 LoRA | 3670016 | 203 min
 **IA3** | **802816** | **226 min**
 
-- 하지만, 직접 훈련을 시작해보았을때는, 훈련에 소요된 시간이 예상보다 많았지만, 이러한 이유는, rescale 벡터를 추가하기 때문에, rescaling 과정에서 차이가 있는것으로 보입니다
 
-- K(G)OAT는 A5000 2장으로 훈련되었으며, 한동대학교 [Xiaopeng Yang](https://www.researchgate.net/profile/Xiaopeng-Yang-2) 교수님의 AIMV 연구실에서 훈련되었습니다.
+- 하지만, 직접 훈련시간을 비교한 결과, 훈련에 소요된 시간이 예상보다 많았지만, 이러한 이유는, rescale 벡터를 추가하기 때문에, rescaling 과정에서 차이가 있는것으로 보입니다
+
 
 ---
 # Dataset
@@ -113,4 +114,8 @@ koalpaca-polyglot-5.8b | 0.664 | 0.748
 
 - K(G)OAT는 더적은 파라미터를 사용하여 훈련하였지만, 프롬프트1 유형에서도 Koalaca와 근사한 성능을 보여주었고, 프롬프트2 유형에서는 3.6% 가량 성능된 정확도를 보여주었습니다.
 
-    
+
+
+# Acknowledgement
+
+- K(G)OAT는 A5000 2장으로 훈련되었으며, 한동대학교 [Xiaopeng Yang](https://www.researchgate.net/profile/Xiaopeng-Yang-2) 교수님의 AIMV 연구실에서 훈련되었습니다.
