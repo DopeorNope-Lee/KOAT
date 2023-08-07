@@ -35,19 +35,21 @@
     
   - LoRA와의 차이점은, LoRA는 hidden state에 새로운 값을 더해주는 기법이지만, IA3의는 Attention에 Key, Value 값을 rescale해주는 벡터와 position-wise feed-forward network의 output을 rescale 하는 벡터를 추가해 훈련시키는 방식입니다.
     
-  - IA3방식은 LoRA보다 적은 파라미터로 더 좋은 성능을 낸다는 방법론으로 소개되었으며 저희는 K(G)OAT를 활용하여 훈련을 진행하였습니다.
+  - IA3방식은 LoRA보다 적은 파라미터로 더 좋은 성능을 낸다는 방법론으로 도입 되었으며 저희는 K(G)OAT를 활용하여 훈련을 진행하였습니다.
 
-- K(G)OAT는 4epoch, maxstep 32,000 step으로 훈련이 되었으며, 총 소요된 시간은 16시간 소요되었습니다.
+- K(G)OAT는 4epoch, maxstep 32,000 step으로 훈련이 되었으며, 총 소요된 시간은 226min 소요되었습니다.
 
 - 같은 방식으로 비트단위로 훈련시키지 않은 LORA방식을 적용한 KoAlpaca는 xxx 시간이 소요되었습니다.
 
-- 훈련한 파라미터 수는 다음과 같습니다.
+- 훈련한 방식에 따른 파라미터 수는 다음과 같습니다.
 
-모델명 | 파라미터수 | 훈련 소요시간
+훈련방식 | 파라미터수 | 훈련 소요시간
 -- | -- | --
-koalpaca-polyglot | 3670016 | 158 min
-**K(G)OAT-polyglot** | **802816** | **158 min**
-    
+LoRA | 3670016 | 203 min
+**IA3** | **802816** | **226 min**
+
+- 하지만, 직접 훈련을 시작해보았을때는, 훈련에 소요된 시간이 예상보다 많았지만, 이러한 이유는, rescale 벡터를 추가하기 때문에, rescaling 과정에서 차이가 있는것으로 보입니다
+
 - K(G)OAT는 A5000 2장으로 훈련되었으며, 한동대학교 [Xiaopeng Yang](https://www.researchgate.net/profile/Xiaopeng-Yang-2) 교수님의 AIMV 연구실에서 훈련되었습니다.
 
 ---
@@ -75,27 +77,40 @@ data = data.map(
 
 - 네이버 영화리뷰 데이터셋인 NSMC 데이터를 활용하였습니다.
 
-```json
-# 기존의 코드
-data = data.map(
-    lambda x: {'text': f"### 질문: {x['instruction']}\n\n### 답변: {x['output']}<|endoftext|>" }
-)
+- 프롬프트는 beomi님의 코드를 활용하였으며, 같은 설정을 통하여 성능 비교를 진행하였습니다.
 
-# 수정된 프롬프트 코드
-data = data.map(
-    lambda x: {'text': f"{x['instruction']}\n\n정답: {x['output']}<|endoftext|>"}
-)
+
+
+
+
+    - 프롬프트 유형 1
+```python
+def build_prompt_text(sent):
+    return "문장: " + sent + '\n감정:'
 ```
 
+   - 프롬프트 유형2
+```python
+def build_prompt_text(sent):
+    return '다음 문장은 긍정일까요 부정일까요?\n' + sent + '\n정답:'
 
-# Fewshot Learning 평가
+```
+  
+
+# Fewshot Learning 평가 결과
 
 - Fewshot Learning 평가
 프롬프트별 정확도는 다음과 같습니다.
 
 모델명 | 프롬프트1 | 프롬프트2
 -- | -- | --
-polyglot-5.8b| 800000 | 158 min
-koalpaca-polyglot-5.8b | 800000 | 158 min
-**K(G)OAT-polyglot** | **3000** | **158 min**
+polyglot-5.8b| 0.556 | 0.68
+koalpaca-polyglot-5.8b | 0.664 | 0.748
+**K(G)OAT-polyglot** | **0.658** | **0.784**
+
+
+- polyglot-5.8b와 koalpaca는 huggingface에 로딩되어있는 모델 불러와 inference를 진행시킨 결과 값입니다.
+
+- K(G)OAT는 더적은 파라미터를 사용하여 훈련하였지만, 프롬프트1 유형에서도 Koalaca와 근사한 성능을 보여주었고, 프롬프트2 유형에서는 3.6% 가량 성능된 정확도를 보여주었습니다.
+
     
