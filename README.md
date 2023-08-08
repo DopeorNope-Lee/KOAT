@@ -18,6 +18,8 @@
 
   - 질문사항은 이슈에 남겨주시면 답변하도록 하겠습니다!
 
+  - Hugging Face에 업로드한 모델은 [여기](https://huggingface.co/DopeorNope/KOAT-5.8b) 서 확인 바랍니다..!
+
 ---
 # K(G)OAT의 훈련 방식
 
