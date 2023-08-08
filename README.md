@@ -31,6 +31,7 @@
 - KoAlpaca 5.8b가 베이스 모델이며, Tokenizer는 Polyglot5.8b의 Tokenizer를 사용하였습니다.
   
 - IA3방식이란?
+
   - LoRA는 rank decomposition 행렬을 사전학습된 모델에 추가하여 중간마다 학습이 가능한 파라미터를 삽입한 방식입니다.
     
   - IA3는 Infused Adapter by Inhibiting and Amplifying Inner Activations의 약자로, LORA와 비슷하게 적은 파라미터를 사전학습된 모델에 추가하여 훈련하는 방법입니다.
