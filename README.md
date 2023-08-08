@@ -21,7 +21,7 @@
   - Hugging Face에 업로드한 모델은 [여기](https://huggingface.co/DopeorNope/KOAT-5.8b) 서 확인 바랍니다..!
 
 ---
-# K(G)OAT의 훈련 방식
+# K(G)OAT의 훈련 방식 🖋️
 
 - baseline은 Beomi님의 KoAlpaca코드를 참조하였습니다.😃
 
@@ -56,9 +56,9 @@ LoRA | 3670016 | 203 min | 2.1 sec
 - 대신 더 적은 parameter로 인해 Inference 시간은 더 단축되었습니다..!
 
 ---
-# Dataset
+# Dataset 💾
 
-## 훈련데이터셋
+## 훈련데이터셋 📚
 
 - 훈련에 Dataset은 기본적으로 KoAlpaca와 성능 비교를 위해 Beomi님의 KoAlpacav1.1 데이터셋을 활용하였습니다.
   
@@ -76,7 +76,7 @@ data = data.map(
 )
 ```
 
-## Fewshot Learning 평가 데이터셋
+## Fewshot Learning 평가 데이터셋 📕
 
 - 네이버 영화리뷰 데이터셋인 NSMC 데이터를 활용하였습니다.
 
@@ -97,7 +97,7 @@ def build_prompt_text(sent):
 
 - 두 프롬프트의 차이점은, 프롬프트1의 경우 모델에게 프롬프트를 간략하게 전달하여 결과를 체크하는 것이며, 프롬프트 2의 경우는 더 세밀한 프롬프트를 통해 결과 값을 전달한다는 차이점이 있습니다.
 
-# Fewshot Learning 평가 결과
+# Fewshot Learning 평가 결과 📈
 
 - Fewshot Learning 평가
 프롬프트별 정확도는 다음과 같습니다.
